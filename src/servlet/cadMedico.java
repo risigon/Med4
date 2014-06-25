@@ -82,7 +82,7 @@ public class cadMedico extends HttpServlet {
 		inserirMedico(nome, cpf, crm, esp, endereco, bairro, cidade, estado, login, senha, request, response);
 		}
 		catch(Exception e){
-			
+			e.printStackTrace();
 		}finally{
 			
 		}
@@ -103,7 +103,6 @@ public class cadMedico extends HttpServlet {
 		 med.setSenha(senha);
 		 
 		 if(Model.Cadastro.Inserir(med))
-		 
 		 request.getRequestDispatcher("cadMedico.jsp").forward(request, response);
 			else{
 				String erro = "Erro ao cadastrar MEDICO!!!";

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import util.JPAUtilis;
+import entidades.Login;
 import entidades.consulta;
 import entidades.medico;
 import entidades.paciente;
@@ -74,6 +75,19 @@ public class Cadastro extends HttpServlet {
 		med.setCons(con);
 		pac.setCons(con);
 		conexao.persist(con);
+		conexao.getTransaction().commit();
+		  
+		conexao.close();
+		
+		return(true); 
+		}
+	
+	public static boolean InserirUsu(Login log) {
+		
+		EntityManager conexao=JPAUtilis.criarManager();
+		 
+		conexao.getTransaction().begin();
+		conexao.persist(log);
 		conexao.getTransaction().commit();
 		  
 		conexao.close();
