@@ -39,9 +39,9 @@ public class cadUsuario extends HttpServlet {
 		HttpSession sessao = request.getSession();
 		
 		if(sessao.getAttribute("usuario")!=null && sessao.getAttribute("usuario")!=""){		
-			request.getRequestDispatcher("cadUsuario.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/cadUsuario.jsp").forward(request, response);
 		}else{
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 		}
 		
 	}
@@ -73,7 +73,7 @@ public class cadUsuario extends HttpServlet {
 		}else{
 			String erro = "Senha Diferente de Confirmar Senha";
 			request.setAttribute("erro", erro);
-			request.getRequestDispatcher("erros.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
 		}
 		
 	}
@@ -87,11 +87,11 @@ public class cadUsuario extends HttpServlet {
 		
 		try{
 			 if(Model.Cadastra.InserirUsu(log)){
-				 request.getRequestDispatcher("cadUsuario.jsp").forward(request, response);
+				 request.getRequestDispatcher("/WEB-INF/cadUsuario.jsp").forward(request, response);
 			 }else{
 					String erro = "Usuario Não Cadastrado";
 					request.setAttribute("erro", erro);
-					request.getRequestDispatcher("erros.jsp").forward(request, response);
+					request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
 				}
 				 
 		 }catch(Exception e){

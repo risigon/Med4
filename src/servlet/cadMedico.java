@@ -39,9 +39,9 @@ public class cadMedico extends HttpServlet {
 		HttpSession sessao = request.getSession();
 		
 		if(sessao.getAttribute("usuario")!=null){		
-			request.getRequestDispatcher("cadMedico.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/cadMedico.jsp").forward(request, response);
 		}else{
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 		}
 	}
 
@@ -75,7 +75,7 @@ public class cadMedico extends HttpServlet {
 			if(med.getCpf().equals(cpf)||med.getCrm().equals(crm)){
 				String erro = "CPF ou CRM Já Cadastrado";
 				request.setAttribute("erro", erro);
-				request.getRequestDispatcher("erros.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
 			}
 		}
 				
@@ -103,11 +103,11 @@ public class cadMedico extends HttpServlet {
 		 med.setSenha(senha);
 		 
 		 if(Model.Cadastra.Inserir(med))
-		 request.getRequestDispatcher("cadMedico.jsp").forward(request, response);
+		 request.getRequestDispatcher("/WEB-INF/cadMedico.jsp").forward(request, response);
 			else{
 				String erro = "Erro ao cadastrar MEDICO!!!";
 				request.setAttribute("erro", erro);
-				request.getRequestDispatcher("erros.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
 			}
 		 
 	}

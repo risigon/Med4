@@ -50,7 +50,7 @@ public class listarConsulta extends HttpServlet {
 		}
 			
 		request.setAttribute("conlista", consultas);
-		request.getRequestDispatcher("listarConsulta.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/listarConsulta.jsp").forward(request, response);
 	}
 
 	/**

@@ -70,7 +70,7 @@ public class gravar extends HttpServlet {
 			}else{
 				String erro = "Erro ao Atualizar cadastro do Paciente "+nome;
 				request.setAttribute("erro", erro);
-				request.getRequestDispatcher("erros.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
 			}
 			break;
 				
@@ -81,7 +81,7 @@ public class gravar extends HttpServlet {
 			}else{
 				String erro = "Erro ao Atualizar cadastro do Médico "+nome;
 				request.setAttribute("erro", erro);
-				request.getRequestDispatcher("erros.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
 			}
 			
 			
@@ -93,7 +93,7 @@ public class gravar extends HttpServlet {
 			}else{
 				String erro = "Erro ao Atualizar cadastro do Médico "+nome;
 				request.setAttribute("erro", erro);
-				request.getRequestDispatcher("erros.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
 			}
 			
 			

@@ -58,7 +58,7 @@ public class excluir extends HttpServlet {
 			else{
 				String erro = "Erro ao excluir o PACIENTE!!! Verificar se o Id: "+id+" esta correto ou se há consulta para o mesmo";
 				request.setAttribute("erro", erro);
-				request.getRequestDispatcher("erros.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
 			}
 			break;
 		}
@@ -68,7 +68,7 @@ public class excluir extends HttpServlet {
 			else{
 				String erro = "Erro ao excluir MEDICO!!! Verificar se o Id: "+id+" esta correto ou se há consulta para o mesmo";
 				request.setAttribute("erro", erro);
-				request.getRequestDispatcher("erros.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
 			}
 			break;
 		}
@@ -78,7 +78,7 @@ public class excluir extends HttpServlet {
 			else{
 				String erro = "Erro ao excluir a CONSULTA, verificar se existe o Id: "+id;
 				request.setAttribute("erro", erro);
-				request.getRequestDispatcher("erros.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
 			}
 			break;
 		}

@@ -38,9 +38,9 @@ public class cadPaciente extends HttpServlet {
 		HttpSession sessao = request.getSession();
 		
 		if(sessao.getAttribute("usuario")!=null){		
-			request.getRequestDispatcher("cadPaciente.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/cadPaciente.jsp").forward(request, response);
 		}else{
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 		}	
 	
 	}
@@ -73,7 +73,7 @@ public class cadPaciente extends HttpServlet {
 			if(pac.getCpf().equals(cpf)){
 				String erro = "CPF Já Cadastrado";
 				request.setAttribute("erro", erro);
-				request.getRequestDispatcher("erros.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
 			}
 			
 		}
@@ -100,7 +100,7 @@ public class cadPaciente extends HttpServlet {
 		 pac.setSenha(senha);
 
 		 if(Model.Cadastra.Inserir(pac)){
-			 request.getRequestDispatcher("cadPaciente.jsp").forward(request, response); 
+			 request.getRequestDispatcher("/WEB-INF/cadPaciente.jsp").forward(request, response); 
 		 }
 		 
 	}

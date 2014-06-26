@@ -49,7 +49,7 @@ public class listarPaciente extends HttpServlet {
 		List<paciente> pacientes = query.getResultList();
 		
 		request.setAttribute("paclista", pacientes);
-		request.getRequestDispatcher("listarPaciente.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/listarPaciente.jsp").forward(request, response);
 		
 	}
 		else{

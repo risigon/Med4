@@ -116,7 +116,7 @@ public class listar extends HttpServlet {
 		List<medico> medicos = Model.Listar.listarMedNome(nome, request, response);
 		
 		request.setAttribute("medlista", medicos);
-		request.getRequestDispatcher("listarMedico.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/listarMedico.jsp").forward(request, response);
 		
 	}
 	
@@ -128,10 +128,10 @@ public class listar extends HttpServlet {
 		if(medicos.isEmpty()){
 			String erro = "Id Inexistente!!!";
 			request.setAttribute("erro", erro);
-			request.getRequestDispatcher("erros.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
 		}else{
 		request.setAttribute("medlista", medicos);
-		request.getRequestDispatcher("atualizaMed.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/atualizaMed.jsp").forward(request, response);
 		}
 	}	
 	
@@ -141,7 +141,7 @@ protected void listarPacNome(String nome, HttpServletRequest request, HttpServle
 		List<paciente> pacientes = Model.Listar.listarPacNome(nome, request, response);
 	
 		request.setAttribute("paclista", pacientes);
-		request.getRequestDispatcher("listarPaciente.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/listarPaciente.jsp").forward(request, response);
 		
 	}
 
@@ -153,11 +153,11 @@ protected void listarPacId(int id, HttpServletRequest request, HttpServletRespon
 	if(pacientes.isEmpty()){
 		String erro = "Id Inexistente!!!";
 		request.setAttribute("erro", erro);
-		request.getRequestDispatcher("erros.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
 	}else{
 	
 	request.setAttribute("paclista", pacientes);
-	request.getRequestDispatcher("atualizaPac.jsp").forward(request, response);
+	request.getRequestDispatcher("/WEB-INF/atualizaPac.jsp").forward(request, response);
 	}
 }
 
@@ -167,7 +167,7 @@ protected void listarPac(HttpServletRequest request, HttpServletResponse respons
 	List<paciente> pacientes = Model.Listar.listarPac(request, response);
 	
 	request.setAttribute("paclista", pacientes);
-	request.getRequestDispatcher("listarPaciente.jsp").forward(request, response);
+	request.getRequestDispatcher("/WEB-INF/listarPaciente.jsp").forward(request, response);
 	
 }
 
@@ -176,7 +176,7 @@ protected void listarMed(HttpServletRequest request, HttpServletResponse respons
 	List<medico> medicos = Model.Listar.listarMed(request, response);
 	
 	request.setAttribute("medlista", medicos);
-	request.getRequestDispatcher("listarMedico.jsp").forward(request, response);
+	request.getRequestDispatcher("/WEB-INF/listarMedico.jsp").forward(request, response);
 	
 }
 
@@ -185,7 +185,7 @@ protected void listarCon(HttpServletRequest request, HttpServletResponse respons
 	List<consulta> consultas = Model.Listar.listarCon(request, response);
 	
 	request.setAttribute("conlista", consultas);
-	request.getRequestDispatcher("listarConsulta.jsp").forward(request, response);
+	request.getRequestDispatcher("/WEB-INF/listarConsulta.jsp").forward(request, response);
 	
 }
 
@@ -194,7 +194,7 @@ protected void listarConPacNome(String nome, HttpServletRequest request, HttpSer
 	List<consulta> consultas = Model.Listar.listarConPacNome(nome, request, response);
 	
 	request.setAttribute("conlista", consultas);
-	request.getRequestDispatcher("listarConsulta.jsp").forward(request, response);
+	request.getRequestDispatcher("/WEB-INF/listarConsulta.jsp").forward(request, response);
 	
 }
 
@@ -203,7 +203,7 @@ protected void listarConMedNome(String nome, HttpServletRequest request, HttpSer
 	List<consulta> consultas = Model.Listar.listarConMedNome(nome, request, response);
 	
 	request.setAttribute("conlista", consultas);
-	request.getRequestDispatcher("listarConsulta.jsp").forward(request, response);
+	request.getRequestDispatcher("/WEB-INF/listarConsulta.jsp").forward(request, response);
 	
 }
 
@@ -223,13 +223,13 @@ protected void listarConId(int id, HttpServletRequest request, HttpServletRespon
 	if(consultas.isEmpty()){
 		String erro = "Id Inexistente!!!";
 		request.setAttribute("erro", erro);
-		request.getRequestDispatcher("erros.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
 	}else{
 	
 	request.setAttribute("conlista", consultas);
 	request.setAttribute("medlista", medicos);
 	request.setAttribute("paclista", pacientes);
-	request.getRequestDispatcher("atualizaCon.jsp").forward(request, response);
+	request.getRequestDispatcher("/WEB-INF/atualizaCon.jsp").forward(request, response);
 	
 }
 }

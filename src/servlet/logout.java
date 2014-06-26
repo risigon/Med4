@@ -32,7 +32,7 @@ public class logout extends HttpServlet {
 		HttpSession sessao = request.getSession();
 		sessao.invalidate();
 				
-		response.sendRedirect("/Mediclin");
+		response.sendRedirect("menu");
 		
 	}
 

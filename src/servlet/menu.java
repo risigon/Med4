@@ -33,12 +33,12 @@ public class menu extends HttpServlet {
 		String usuario = (String) sessao.getAttribute("usuario");
 		
 		if(sessao.isNew()){
-			request.getRequestDispatcher("").forward(request, response);	
+			request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);	
 		}
 		else if(usuario==null){
-			request.getRequestDispatcher("").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
 		}else{
-			request.getRequestDispatcher("menuAdmin.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/menuAdmin.jsp").forward(request, response);
 		}
 		
 	}

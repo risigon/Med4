@@ -52,7 +52,7 @@ public class listarMedicos extends HttpServlet {
 		List<medico> medicos = Model.Listar.listarMed(request, response);
 		
 		request.setAttribute("medlista", medicos);
-		request.getRequestDispatcher("listarMedico.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/listarMedico.jsp").forward(request, response);
 	}
 		else{
 			response.sendRedirect("logindb");

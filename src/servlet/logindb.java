@@ -40,12 +40,12 @@ public class logindb extends HttpServlet {
 		String usuario = (String) sessao.getAttribute("usuario");
 		
 		if(sessao.isNew()){
-			request.getRequestDispatcher("login.jsp").forward(request, response);	
+			request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);	
 		}
 		else if(usuario==null){
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 		}else{
-			request.getRequestDispatcher("menuAdmin.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/menuAdmin.jsp").forward(request, response);
 		}
 		
 	}
@@ -82,12 +82,12 @@ public class logindb extends HttpServlet {
 			HttpSession sessao = request.getSession();
 			sessao.setAttribute("usuario", usuario);
 			request.setAttribute("user", usuario);
-			request.getRequestDispatcher("menuAdmin.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/menuAdmin.jsp").forward(request, response);
 			
 		}
 			else{
 				request.setAttribute("falha", "Erro de Autenticação");
-				request.getRequestDispatcher("login.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 			}
 		}catch(Exception e){
 			

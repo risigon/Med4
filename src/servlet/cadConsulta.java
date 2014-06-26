@@ -65,10 +65,10 @@ HttpSession sessao = request.getSession();
 			
 			request.setAttribute("listamed", med);
 			
-			request.getRequestDispatcher("cadConsulta.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/cadConsulta.jsp").forward(request, response);
 			
 		}else{
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 		}
 	}
 
