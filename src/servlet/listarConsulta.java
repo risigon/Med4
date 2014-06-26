@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import util.JPAUtilis;
 import entidades.consulta;
@@ -34,6 +35,10 @@ public class listarConsulta extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		HttpSession sessao = request.getSession();
+		
+		if(sessao.getAttribute("usuario")!=null){
+		
 		EntityManager conexao=JPAUtilis.criarManager();
 		
 		Query q1 = conexao.createQuery("select count(*) from consulta");
@@ -51,6 +56,10 @@ public class listarConsulta extends HttpServlet {
 			
 		request.setAttribute("conlista", consultas);
 		request.getRequestDispatcher("/WEB-INF/listarConsulta.jsp").forward(request, response);
+	}
+		else{
+			response.sendRedirect("logindb");
+			}
 	}
 
 	/**

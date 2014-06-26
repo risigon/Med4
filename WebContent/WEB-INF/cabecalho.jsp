@@ -12,6 +12,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Cabecalho</title>
 <link rel="stylesheet" href="resources/css/estilo.css">
+<script language="JavaScript" src="relogio.js"></script>
 
 <% HttpSession sessao = request.getSession(true); 
 String usuario = (String) sessao.getAttribute("usuario");
@@ -46,8 +47,29 @@ Hora:
 
 </div>	
 
+<script type="text/javascript">
+
+function mostrarHora(timeoutPeriod){ 
+   	var data = new Date();
+   	
+   	var hora = data.getHours();          // 0-23
+   	var min = data.getMinutes();        // 0-59
+   	var seg = data.getSeconds();        // 0-59
+   	
+   	var str_hora = hora + ':' + min + ':' + seg;
+   	
+   	alert(str_hora);
+   	
+} 
+
+</script>
+
 </head>
 <body>
 
+<!-- form action="">
+<label class="form-field"  onload="mostrarHora(1000);"></label>
+</form-->
+ 
 </body>
 </html>
