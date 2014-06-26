@@ -86,7 +86,7 @@ public class cadUsuario extends HttpServlet {
 		log.setSenha(senha);
 		
 		try{
-			 if(Model.Cadastro.InserirUsu(log)){
+			 if(Model.Cadastra.InserirUsu(log)){
 				 request.getRequestDispatcher("cadUsuario.jsp").forward(request, response);
 			 }else{
 					String erro = "Usuario Não Cadastrado";
@@ -103,7 +103,7 @@ public class cadUsuario extends HttpServlet {
 	}
 	
 	protected boolean validausuario(String usuario, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		List<Login> log = Model.Lista.listarUsu(request, response);
+		List<Login> log = Model.Listar.listarUsu(request, response);
 		
 		for(Login usu: log){
 			if(usu.getUsuario().equals(usuario)){

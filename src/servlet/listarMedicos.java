@@ -49,7 +49,7 @@ public class listarMedicos extends HttpServlet {
 		Query query = conexao.createQuery("select p From medico p order by p.nome");
 		List<medico> medicos = query.getResultList();*/
 		
-		List<medico> medicos = Model.Lista.listarMed(request, response);
+		List<medico> medicos = Model.Listar.listarMed(request, response);
 		
 		request.setAttribute("medlista", medicos);
 		request.getRequestDispatcher("listarMedico.jsp").forward(request, response);

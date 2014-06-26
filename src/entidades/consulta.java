@@ -18,7 +18,6 @@ public class consulta {
 	@JoinColumn(name="idpac", referencedColumnName="idpac")
 	private paciente pac;
 	
-	private String especialidade;
 	private String dtcons;
 	private String hora;
 	private String obs;
@@ -31,12 +30,6 @@ public class consulta {
 		this.id = id;
 	}
 
-	public String getEspecialidade() {
-		return especialidade;
-	}
-	public void setEspecialidade(String especialidade) {
-		this.especialidade = especialidade;
-	}
 	public String getDtcons() {
 		return dtcons;
 	}

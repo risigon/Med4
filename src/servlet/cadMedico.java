@@ -69,7 +69,7 @@ public class cadMedico extends HttpServlet {
 		}
 		
 		try{
-		List<medico> medi = Model.Lista.listarMed(request, response);
+		List<medico> medi = Model.Listar.listarMed(request, response);
 	
 		for(medico med: medi){
 			if(med.getCpf().equals(cpf)||med.getCrm().equals(crm)){
@@ -102,7 +102,7 @@ public class cadMedico extends HttpServlet {
 		 med.setLogin(login);
 		 med.setSenha(senha);
 		 
-		 if(Model.Cadastro.Inserir(med))
+		 if(Model.Cadastra.Inserir(med))
 		 request.getRequestDispatcher("cadMedico.jsp").forward(request, response);
 			else{
 				String erro = "Erro ao cadastrar MEDICO!!!";

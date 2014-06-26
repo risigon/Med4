@@ -113,7 +113,7 @@ public class listar extends HttpServlet {
 	
 	protected void listarMedNome(String nome, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
-		List<medico> medicos = Model.Lista.listarMedNome(nome, request, response);
+		List<medico> medicos = Model.Listar.listarMedNome(nome, request, response);
 		
 		request.setAttribute("medlista", medicos);
 		request.getRequestDispatcher("listarMedico.jsp").forward(request, response);
@@ -123,7 +123,7 @@ public class listar extends HttpServlet {
 	protected void listarMedId(int id, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
 		
-		List<medico> medicos = Model.Lista.listarMedId(id, request, response);
+		List<medico> medicos = Model.Listar.listarMedId(id, request, response);
 		
 		if(medicos.isEmpty()){
 			String erro = "Id Inexistente!!!";
@@ -138,7 +138,7 @@ public class listar extends HttpServlet {
 protected void listarPacNome(String nome, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
 			
-		List<paciente> pacientes = Model.Lista.listarPacNome(nome, request, response);
+		List<paciente> pacientes = Model.Listar.listarPacNome(nome, request, response);
 	
 		request.setAttribute("paclista", pacientes);
 		request.getRequestDispatcher("listarPaciente.jsp").forward(request, response);
@@ -148,7 +148,7 @@ protected void listarPacNome(String nome, HttpServletRequest request, HttpServle
 protected void listarPacId(int id, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	
 	
-	List<paciente> pacientes = Model.Lista.listarPacId(id, request, response);
+	List<paciente> pacientes = Model.Listar.listarPacId(id, request, response);
 	
 	if(pacientes.isEmpty()){
 		String erro = "Id Inexistente!!!";
@@ -164,7 +164,7 @@ protected void listarPacId(int id, HttpServletRequest request, HttpServletRespon
 
 protected void listarPac(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	
-	List<paciente> pacientes = Model.Lista.listarPac(request, response);
+	List<paciente> pacientes = Model.Listar.listarPac(request, response);
 	
 	request.setAttribute("paclista", pacientes);
 	request.getRequestDispatcher("listarPaciente.jsp").forward(request, response);
@@ -173,7 +173,7 @@ protected void listarPac(HttpServletRequest request, HttpServletResponse respons
 
 protected void listarMed(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	
-	List<medico> medicos = Model.Lista.listarMed(request, response);
+	List<medico> medicos = Model.Listar.listarMed(request, response);
 	
 	request.setAttribute("medlista", medicos);
 	request.getRequestDispatcher("listarMedico.jsp").forward(request, response);
@@ -182,7 +182,7 @@ protected void listarMed(HttpServletRequest request, HttpServletResponse respons
 
 protected void listarCon(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	
-	List<consulta> consultas = Model.Lista.listarCon(request, response);
+	List<consulta> consultas = Model.Listar.listarCon(request, response);
 	
 	request.setAttribute("conlista", consultas);
 	request.getRequestDispatcher("listarConsulta.jsp").forward(request, response);
@@ -191,7 +191,7 @@ protected void listarCon(HttpServletRequest request, HttpServletResponse respons
 
 protected void listarConPacNome(String nome, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	
-	List<consulta> consultas = Model.Lista.listarConPacNome(nome, request, response);
+	List<consulta> consultas = Model.Listar.listarConPacNome(nome, request, response);
 	
 	request.setAttribute("conlista", consultas);
 	request.getRequestDispatcher("listarConsulta.jsp").forward(request, response);
@@ -200,7 +200,7 @@ protected void listarConPacNome(String nome, HttpServletRequest request, HttpSer
 
 protected void listarConMedNome(String nome, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	
-	List<consulta> consultas = Model.Lista.listarConMedNome(nome, request, response);
+	List<consulta> consultas = Model.Listar.listarConMedNome(nome, request, response);
 	
 	request.setAttribute("conlista", consultas);
 	request.getRequestDispatcher("listarConsulta.jsp").forward(request, response);
@@ -210,15 +210,15 @@ protected void listarConMedNome(String nome, HttpServletRequest request, HttpSer
 protected void listarConId(int id, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	
 	
-	List<consulta> consultas = Model.Lista.listarConId(id, request, response);
+	List<consulta> consultas = Model.Listar.listarConId(id, request, response);
 	for(consulta con: consultas){
 		con.setDtcons(converterdatas.DateToData(con.getDtcons()));
 	}
 	
 	
-	List<medico> medicos = Model.Lista.listarMed(request, response);
+	List<medico> medicos = Model.Listar.listarMed(request, response);
 	
-	List<paciente> pacientes = Model.Lista.listarPac(request, response);
+	List<paciente> pacientes = Model.Listar.listarPac(request, response);
 
 	if(consultas.isEmpty()){
 		String erro = "Id Inexistente!!!";

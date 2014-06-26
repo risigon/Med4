@@ -65,7 +65,7 @@ public class gravar extends HttpServlet {
 		
 		switch(opc){
 		case ("atualizapac"):{
-			if(Model.Atualizar.atualizarPac(id, nome, cpf, endereco, bairro, cidade, estado)){
+			if(Model.Atualiza.atualizarPac(id, nome, cpf, endereco, bairro, cidade, estado)){
 				response.sendRedirect("listarPaciente");	
 			}else{
 				String erro = "Erro ao Atualizar cadastro do Paciente "+nome;
@@ -76,7 +76,7 @@ public class gravar extends HttpServlet {
 				
 		}
 		case ("atualizamed"):{
-			if(Model.Atualizar.atualizarMed(id, nome, cpf, crm, esp, endereco, bairro, cidade, estado)){
+			if(Model.Atualiza.atualizarMed(id, nome, cpf, crm, esp, endereco, bairro, cidade, estado)){
 				response.sendRedirect("listarMedicos");	
 			}else{
 				String erro = "Erro ao Atualizar cadastro do Médico "+nome;
@@ -88,7 +88,7 @@ public class gravar extends HttpServlet {
 			break;
 		}
 		case ("atualizacon"):{
-			if(Model.Atualizar.atualizarCon(id, nomepac, nomemed, esp, dtcons, hora, obs, retorno, request, response)){
+			if(Model.Atualiza.atualizarCon(id, nomepac, nomemed, esp, dtcons, hora, obs, retorno, request, response)){
 				response.sendRedirect("listarConsulta");	
 			}else{
 				String erro = "Erro ao Atualizar cadastro do Médico "+nome;

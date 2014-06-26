@@ -68,7 +68,7 @@ public class cadPaciente extends HttpServlet {
 		}
 		
 		try{
-		List <paciente> paci = Model.Lista.listarPac(request, response);
+		List <paciente> paci = Model.Listar.listarPac(request, response);
 		for(paciente pac: paci){
 			if(pac.getCpf().equals(cpf)){
 				String erro = "CPF Já Cadastrado";
@@ -99,7 +99,7 @@ public class cadPaciente extends HttpServlet {
 		 pac.setLogin(login);
 		 pac.setSenha(senha);
 
-		 if(Model.Cadastro.Inserir(pac)){
+		 if(Model.Cadastra.Inserir(pac)){
 			 request.getRequestDispatcher("cadPaciente.jsp").forward(request, response); 
 		 }
 		 

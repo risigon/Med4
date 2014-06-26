@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="entidades.*,
+				java.util.*" %>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -14,10 +16,16 @@
 
 <c:import url="cabecalho.jsp"></c:import>
 
+<%
+String listarpacnome = "listarpacnome";
+List<paciente> paci = (List<paciente>)request.getAttribute("paclista");
+
+%>
+
 <table id="zebra" class="tabela">
             <thead>
             <tr>
-            		<th colspan=10>Listagem de Pacientes Cadastrados</th>
+            		<th colspan=12>Listagem de Pacientes Cadastrados</th>
             </tr>
                 <tr>
                     <th>Id</th>
@@ -28,15 +36,15 @@
                     <th>Cidade</th>
                     <th>Estado</th>
                     <th>Login</th>
-                    <th>Senha</th>
-              
+                    <th colspan=2>Alterar</th>
+                    
                 </tr>
 
             </thead>
             <tbody>
                 <c:forEach var="pac" items="${paclista}">
                 <tr>
-                    <td align="center"><c:out value="${pac.idpac}"  /></td>
+                    <td align="center"><c:out value="${pac.idpac}"/></td>
                     <td align="left"><c:out value="${pac.nome}" /></td>
                     <td align="center"><c:out value="${pac.cpf}" /></td>
                     <td align="left"><c:out value="${pac.endereco}" /></td>
@@ -44,7 +52,20 @@
                     <td align="left"><c:out value="${pac.cidade}"  /></td>
                     <td align="center"><c:out value="${pac.estado}"  /></td>
                     <td align="center"><c:out value="${pac.login}"  /></td>
-                    <td align="center"><c:out value="${pac.senha}"  /></td>
+                    <td align="center">
+                    <form action="excluir" method="post">
+                    <input type="hidden" name="opc" value="excluirpac"/>
+                    <input type="hidden" name="id" value="${pac.idpac}"/>
+                    <input type="submit" value="Excluir"/>
+                    </form>
+                    </td>
+                    <td align="center">
+                    <form action="listar" method="post">
+                    <input type="hidden" name="opc" value="listarpacid">
+                    <input type="hidden" name="id" value="${pac.idpac}"/>
+                    <input type="submit" value="Alterar"/>
+                    </form>
+                    </td>
                 </tr>
                 </c:forEach>
             </tbody>
@@ -64,27 +85,6 @@
 	</table>
 </form>
 
-<form action="listar" method="post">
-	<table class="tabela2">
-	<tr>
-	<td>Id:
-	<input type="text" name="id" size=3>
-	<input type="hidden" name="opc" value="listarpacid">
-	<input type="submit" value="Atualizar"></td>
-	</tr>
-	</table>
-</form>        
-
-<form action="excluir" method="post">
-	<table class="tabela2">
-	<tr>
-	<td>Id:
-	<input type="text" name="id" value="" size=3>
-	<input type="hidden" name="opc" value="excluirpac">
-	<input type="submit" value="Excluir"></td>
-	</tr>
-	</table>
-</form>
 
 <form action="listar" method="post">
 	<input type="hidden" name="opc" value="listarpac">

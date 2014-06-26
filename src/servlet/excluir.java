@@ -43,6 +43,7 @@ public class excluir extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
 		Integer id = Integer.parseInt(request.getParameter("id"));
 		String opc = request.getParameter("opc");
 
@@ -52,7 +53,7 @@ public class excluir extends HttpServlet {
 		
 		switch(opc){
 		case ("excluirpac"):{
-			if(Model.Exclusao.excluirPaciente(id))
+			if(Model.Exclui.excluirPaciente(id))
 			response.sendRedirect("listarPaciente");
 			else{
 				String erro = "Erro ao excluir o PACIENTE!!! Verificar se o Id: "+id+" esta correto ou se há consulta para o mesmo";
@@ -62,7 +63,7 @@ public class excluir extends HttpServlet {
 			break;
 		}
 		case ("excluirmed"):{
-			if(Model.Exclusao.excluirMedico(id))
+			if(Model.Exclui.excluirMedico(id))
 			response.sendRedirect("listarMedicos");
 			else{
 				String erro = "Erro ao excluir MEDICO!!! Verificar se o Id: "+id+" esta correto ou se há consulta para o mesmo";
@@ -72,7 +73,7 @@ public class excluir extends HttpServlet {
 			break;
 		}
 		case ("excluircon"):{
-			if(Model.Exclusao.excluirConsulta(id))
+			if(Model.Exclui.excluirConsulta(id))
 			response.sendRedirect("listarConsulta");
 			else{
 				String erro = "Erro ao excluir a CONSULTA, verificar se existe o Id: "+id;

@@ -112,13 +112,12 @@ HttpSession sessao = request.getSession();
 		
 		con.setMed(med);
 		con.setPac(pac);
-		con.setEspecialidade(med.getEspecialidade());
 		con.setDtcons(converterdatas.DataToDate(dtcons));
 		con.setHora(horacons);
 		con.setObs(obs);
 		con.setRetorno(retorno);
 		
-		Model.Cadastro.InserirCon(con, pac, med);
+		Model.Cadastra.InserirCon(con, pac, med);
 		 
 		 	 
 		 

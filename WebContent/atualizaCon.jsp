@@ -35,14 +35,7 @@
                     <option><c:out value="${med.nome}"/></option>
                     </c:forEach>
                     </select>
-                    <div class="form-title">Especialidade</div>
-                    <select class="form-field" name="esp">
-                    <option><c:out value="${con.med.especialidade}"/></option>
-                    <option>Clinico Geral</option>
-					<option>Cardiologista</option>
-					<option>Pediatra</option>
-					<option>Psicologo</option>
-                    </select>
+                    <c:out value="${con.med.especialidade}"/>
                     <div class="form-title">Data Consulta</div>
                     <input class="form-field" type="text" name="dtcons" size=10 maxlength=10 value="${con.dtcons}"pattern="\d{2}\/\d{2}\/\d{4}\" placeholder="dd/mm/aaaa" required />
                     <div class="form-title">Hora</div>
