@@ -88,7 +88,7 @@ public class gravar extends HttpServlet {
 			break;
 		}
 		case ("atualizacon"):{
-			if(Model.Atualiza.atualizarCon(id, nomepac, nomemed, esp, dtcons, hora, obs, retorno, request, response)){
+			if(Model.Atualiza.atualizarCon(id, nomepac, nomemed, dtcons, hora, obs, retorno, request, response)){
 				response.sendRedirect("listarConsulta");	
 			}else{
 				String erro = "Erro ao Atualizar cadastro do Médico "+nome;

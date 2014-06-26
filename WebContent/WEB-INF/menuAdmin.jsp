@@ -23,6 +23,16 @@
 	}else{
 %>	
 	<ul class="menu">
+	<li> <a href="">Institucional</a> 
+			<ul>
+				<li> <a href="empresa.jsp">Empresa</a></li>
+				<li> <a href="historia.jsp">História</a></li>
+				<li> <a href="contato.jsp">Contato</a></li>
+				<li> <a href="Notícias.jsp">Noticias</a></li>
+			</ul>
+				
+		</li>
+	
 		<li> <a href="">Paciente</a> 
 			<ul>
 				<li> <a href="cadPaciente">Cadastrar</a></li>

@@ -3,7 +3,7 @@
 margin: 0;
 text-align: center;
 padding: 0;
-width: 900px;
+width: 1080px;
 height: 35px;
 position: relative;
 top: 5px;
@@ -13,7 +13,7 @@ list-style: none;
 }
 
 .menu li{
-width: 180px;
+width: 160px;
 padding:0px;
 margin: 0;
 position: relative;

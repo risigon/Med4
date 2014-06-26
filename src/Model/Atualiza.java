@@ -73,7 +73,7 @@ return true;
 
 }
 
-public static boolean atualizarCon(int id, String nomepac, String nomemed, String esp, String dtcons, String hora, String obs, String retorno, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+public static boolean atualizarCon(int id, String nomepac, String nomemed, String dtcons, String hora, String obs, String retorno, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
 	//criar conexao
 	EntityManager conexao=JPAUtilis.criarManager();
@@ -85,11 +85,10 @@ public static boolean atualizarCon(int id, String nomepac, String nomemed, Strin
 	
 	try{
 	conexao.getTransaction().begin();
-	Query q2 = conexao.createQuery("update consulta c set c.med=:med, c.pac=:pac, c.especialidade=:esp, c.dtcons=:dtcons, c.hora=:hora, c.obs=:obs, c.retorno=:retorno  where c.id=:id");
+	Query q2 = conexao.createQuery("update consulta c set c.med=:med, c.pac=:pac, c.dtcons=:dtcons, c.hora=:hora, c.obs=:obs, c.retorno=:retorno  where c.id=:id");
 	q2.setParameter("id", id);
 	q2.setParameter("med", med);
 	q2.setParameter("pac", pac);
-	q2.setParameter("esp", esp);
 	q2.setParameter("dtcons", data);
 	q2.setParameter("hora", hora);
 	q2.setParameter("obs", obs);

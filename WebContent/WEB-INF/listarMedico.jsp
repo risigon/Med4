@@ -15,7 +15,7 @@
 <table id="zebra" class="tabela">
             <thead>
             <tr>
-            		<th colspan=10>Listagem de Médicos Cadastrados</th>
+            		<th colspan=12>Listagem de Médicos Cadastrados</th>
             </tr>
                 <tr>
                     <th>Id</th>
@@ -28,6 +28,7 @@
                     <th>Cidade</th>
                     <th>Estado</th>
                     <th>Login</th>
+                    <th colspan=2>Alterar</th>
                     
               
                 </tr>
@@ -45,7 +46,20 @@
                     <td width=90 align="center"><c:out value="${med.cidade}"  /></td>
                     <td width=20 align="center"><c:out value="${med.estado}"  /></td>
                     <td width=90 align="center"><c:out value="${med.login}"  /></td>
-                    
+                    <td align="center">
+                    <form action="excluir" method="post">
+                    <input type="hidden" name="opc" value="excluirmed"/>
+                    <input type="hidden" name="id" value="${med.idmed}"/>
+                    <input type="submit" value="Excluir"/>
+                    </form>
+                    </td>
+                    <td align="center">
+                    <form action="listar" method="post">
+                    <input type="hidden" name="opc" value="listarmedid">
+                    <input type="hidden" name="id" value="${med.idmed}"/>
+                    <input type="submit" value="Alterar"/>
+                    </form>
+                    </td>
                 </tr>
                 </c:forEach>
             </tbody>
@@ -61,28 +75,6 @@
 	</tr>
 	</table>
 </form>        
-
-<form action="listar" method="post">
-	<table  class="tabela2">
-	<tr>
-	<td>Informar Id:
-	<input type="text" name="id" value="1" size=3>
-	<input type="hidden" name="opc" value="listarmedid">
-	<input type="submit" value="Alterar"></td>
-	</tr>
-	</table>
-</form>        
-
-<form action="excluir" method="post">
-	<table class="tabela2">
-	<tr>
-	<td>Informar Id:
-	<input type="text" name="id" value="1" size=3>
-	<input type="hidden" name="opc" value="excluirmed">
-	<input type="submit" value="Excluir"></td>
-	</tr>
-	</table>
-</form>
 
 <form action="listar" method="post">
 	<input type="hidden" name="opc" value="listarmed">

@@ -15,7 +15,7 @@
 <table id="zebra" class="tabela">
             <thead>
             <tr>
-            		<th colspan=9>Listagem de Consultas Cadastradas</th>
+            		<th colspan=11>Listagem de Consultas Cadastradas</th>
             </tr>
                 <tr>
                     <th>Id</th>
@@ -27,6 +27,7 @@
                     <th>Hora</th>
                     <th>Observação</th>
                     <th>Retorno</th>
+                    <th colspan=2>Alterar</th>
                     
               
                 </tr>
@@ -43,6 +44,20 @@
                     <td width=120 align="left"><c:out value="${con.hora}"  /></td>
                     <td width=90 align="left"><c:out value="${con.obs}"  /></td>
                     <td width=20 align="center"><c:out value="${con.retorno}"  /></td>
+                    <td align="center">
+                    <form action="excluir" method="post">
+                    <input type="hidden" name="opc" value="excluircon"/>
+                    <input type="hidden" name="id" value="${con.id}"/>
+                    <input type="submit" value="Excluir"/>
+                    </form>
+                    </td>
+                    <td align="center">
+                    <form action="listar" method="post">
+                    <input type="hidden" name="opc" value="listarconid">
+                    <input type="hidden" name="id" value="${con.id}"/>
+                    <input type="submit" value="Alterar"/>
+                    </form>
+                    </td>
                 </tr>
                 </c:forEach>
             </tbody>
@@ -68,27 +83,6 @@
 	</tr>
 	</table>
 </form> 
-<form action="listar" method="post">
-	<table  class="tabela2">
-	<tr>
-	<td>Informar Id:
-	<input type="text" name="id" value="1" size=3>
-	<input type="hidden" name="opc" value="listarconid">
-	<input type="submit" value="Alterar"></td>
-	</tr>
-	</table>
-</form>        
-
-<form action="excluir" method="post">
-	<table class="tabela2">
-	<tr>
-	<td>Informar Id:
-	<input type="text" name="id" value="1" size=3>
-	<input type="hidden" name="opc" value="excluircon">
-	<input type="submit" value="Excluir"></td>
-	</tr>
-	</table>
-</form>
 
 <form action="listar" method="post">
 	<input type="hidden" name="opc" value="listarcon">
