@@ -6,11 +6,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Rodape</title>
 <link rel="stylesheet" href="estilo.css">
+<script language="JavaScript" src="resources/js/relogio.js"></script>
 
 </head>
-<body>
+<body onload="javascrip:moveRelogio();">
 	
-	
+		<form name="form_relogio">
+		<input class="form-relog-rodape" type="text" name="relogio" size="8">
+		</form>
+		
 		<div class="form-title-rodape">
 			<h3>Climed, Aqui sua Saude vale mais.</h3>
 			Contato: (16) 3370-0162 / 9987-2243 - email: contato@mediclin.com.br<br>

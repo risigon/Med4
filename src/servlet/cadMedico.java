@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 
 import util.JPAUtilis;
 import entidades.medico;
@@ -80,6 +81,7 @@ public class cadMedico extends HttpServlet {
 				String erro = "CPF ou CRM Já Cadastrado";
 				request.setAttribute("erro", erro);
 				request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
+				
 			}
 			else{
 				inserirMedico(nome, cpf, crm, esp, endereco, bairro, cidade, estado, login, senha, request, response);
