@@ -14,7 +14,11 @@
 
 <a id="right" class="submit-button" href="menu">Voltar</a>
 
+<img src="<c:url value="resources/img/climed.jpg"/>"/>
+
 <h2 class="form-title"><c:out value="${erro}"></c:out></h2>
+
+
 
 </body>
 </html>

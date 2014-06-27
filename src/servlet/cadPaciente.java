@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 
 import util.JPAUtilis;
 import entidades.paciente;
@@ -69,16 +70,23 @@ public class cadPaciente extends HttpServlet {
 		
 		try{
 		List <paciente> paci = Model.Listar.listarPac(request, response);
+		boolean existe=false;
 		for(paciente pac: paci){
 			if(pac.getCpf().equals(cpf)){
+				existe = true;
+			}
+		}
+			if(existe){
 				String erro = "CPF Já Cadastrado";
 				request.setAttribute("erro", erro);
 				request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
 			}
+			else{
+				inserirPaciente(nome, cpf, endereco, bairro, cidade, estado, login, senha, request, response);
+			}
 			
 		}
-		inserirPaciente(nome, cpf, endereco, bairro, cidade, estado, login, senha, request, response);
-		}
+		
 		catch(Exception e){
 			
 		}finally{

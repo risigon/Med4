@@ -70,17 +70,22 @@ public class cadMedico extends HttpServlet {
 		
 		try{
 		List<medico> medi = Model.Listar.listarMed(request, response);
-	
+		boolean existe=false;
 		for(medico med: medi){
 			if(med.getCpf().equals(cpf)||med.getCrm().equals(crm)){
+				existe=true;
+			}
+		}
+			if(existe){
 				String erro = "CPF ou CRM Já Cadastrado";
 				request.setAttribute("erro", erro);
 				request.getRequestDispatcher("/WEB-INF/erros.jsp").forward(request, response);
 			}
+			else{
+				inserirMedico(nome, cpf, crm, esp, endereco, bairro, cidade, estado, login, senha, request, response);
+			}
 		}
 				
-		inserirMedico(nome, cpf, crm, esp, endereco, bairro, cidade, estado, login, senha, request, response);
-		}
 		catch(Exception e){
 			e.printStackTrace();
 		}finally{
