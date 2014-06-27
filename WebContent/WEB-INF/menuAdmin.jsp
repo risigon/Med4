@@ -53,8 +53,8 @@
 		<li> <a href="">Consulta</a> 
 			<ul>
 				<li> <a href="cadConsulta">Cadastrar</a></li>
-				<li> <a href="listarConsultas">Alterar</a></li>
-				<li> <a href="listarConsultas">Excluir</a></li>
+				<li> <a href="listarConsulta">Alterar</a></li>
+				<li> <a href="listarConsulta">Excluir</a></li>
 				
 			</ul>
 		</li>

@@ -36,7 +36,6 @@ public class senhamd5 extends HttpServlet {
 		try {
 			converter = stringtomd5(md5);
 		} catch (NoSuchAlgorithmException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
