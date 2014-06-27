@@ -15,17 +15,18 @@ public static boolean excluirPaciente(int id){
 		 EntityManager conexao=JPAUtilis.criarManager();
 		 
 		 paciente pac = conexao.find(paciente.class, id);
+		 
 		 try{
 		 conexao.getTransaction().begin();
 		 conexao.remove(pac);
 		 conexao.getTransaction().commit();
 		 } catch(Exception e){
-		 return false;
+			 return false;
 		 }finally{
 		 conexao.close();
 		 }
-		return true;
 		 
+		return true;
 		
 	}
 
@@ -35,6 +36,7 @@ public static boolean excluirMedico(int id){
 		 EntityManager conexao=JPAUtilis.criarManager();
 		 
 		 medico med = conexao.find(medico.class, id);
+		 
 		 try{
 		 conexao.getTransaction().begin();
 		 conexao.remove(med);
@@ -44,9 +46,9 @@ public static boolean excluirMedico(int id){
 		 }finally{
 		 conexao.close();
 		 }
+		 
 		return true;
 		 
-		
 	}
 
 public static boolean excluirConsulta(int id){
@@ -55,19 +57,19 @@ public static boolean excluirConsulta(int id){
 	 EntityManager conexao=JPAUtilis.criarManager();
 	 
 	 consulta con = conexao.find(consulta.class, id);
+	 
 	 try{
 	 conexao.getTransaction().begin();
 	 conexao.remove(con);
 	 conexao.getTransaction().commit();
 	 } catch(Exception e){
-	 return false;
+		 return false;
 	 }finally{
-	 conexao.close();
+		 conexao.close();
 	 }
-	return true;
 	 
+	return true;
 	
 }
 
-	
 }
